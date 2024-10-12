@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title WriteRight – Ensuring your messages sound like native American English and are grammatically perfect.
+    script(src='/javascripts/index.js')
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=content_copy")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  body
+    .section
+      .hero-head
+
+      .hero-body
+        .container.has-text-centered
+          .columns 
+            .column
+              h1.title.is-1.has-text-left Rewrite right!
+              h2.subtitle.is-size-7.has-text-right Powered by Google Gemini AI
+              if error 
+                h2.subtitle.is-size-7.has-text-left Google thinks your message is hate speech, lol. What a joke!
+              form(action="/message" method="post")
+                .field
+                  .control
+                    textarea.textarea.is-primary(name="message", placeholder="Type your message here...", value=message)
+                      | #{message}
+                .buttons.is-pulled-right(style="margin-top: 1rem;")
+                  button.button.is-large(type="submit") Get It Right
+            .column 
+              // Conditional rendering of the card
+              if responseCards
+                .container
+                  .section
+                    each card in responseCards
+                      h6.subtitle.has-text-left
+                        | #{card.title}
+                      .card.mb-3
+                        .card-content
+                          button#copyButton.copy-button
+                            span.material-symbols-outlined
+                              | content_copy
+                          .content
+                            p= card.value
+                 
+          
+      .hero-foot
+        .tabs.is-centered

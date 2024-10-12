@@ -1,0 +1,79 @@
+@use "../../node_modules/bulma/bulma" as *;
+
+a {
+    color: #00B7FF;
+}
+
+.copy-button {
+    .material-symbols-outlined {
+        font-size: 20px;
+    }
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+}
+
+.card-content {
+    position: relative;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+body {
+    min-height: 100vh;
+    animation: gradientAnimation 10s ease infinite; /* Animation settings */
+    background: linear-gradient(45deg, #ff6a00, #ee0979); /* Initial gradient */
+}
+
+/* Keyframes for the gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body * {
+    font-family: 'Poppins', sans-serif; /* Set Poppins as the default font */
+    color: #333; /* Text color for readability */
+    line-height: 1.6; /* Increase line height for better readability */
+    margin: 0; /* Remove default margin */
+}
+
+h1 {
+    font-size: 2.5rem; /* Size for main headings */
+    font-weight: 600; /* Semi-bold */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+h2 {
+    font-size: 2rem; /* Size for subheadings */
+    font-weight: 500; /* Medium weight */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+h3 {
+    font-size: 1.75rem; /* Size for smaller subheadings */
+    font-weight: 400; /* Regular weight */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+p {
+    font-size: 1rem; /* Size for paragraph text */
+    font-weight: 400; /* Regular weight */
+    margin-bottom: 15px; /* Space below paragraphs */
+}
+
