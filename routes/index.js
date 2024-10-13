@@ -1,8 +1,12 @@
 var express = require('express');
 const { rewriteText, REVISED_TEXT_TITLES } = require('./../gemini-ai');
+const morgan = require('./../logger');
 var router = express.Router();
 
 /* GET home page. */
+
+router.use(morgan.createRequestLogMiddleware());
+
 router.get('/', function(req, res, next) {
   res.render('index', {
     message: ''
